@@ -1,0 +1,18 @@
+INSERT into student (regno,Name,section,semister,coursecode1,coursecode2,coursecode3,coursecode4,coursecode5,coursecode6,coursecode7,coursecode8,coursecode9) VALUES('169105157','Sachin','CSE 5C','5','CS1501','CS1502','CS1504','CS1505','CV1791','CC1551','CS1530','CS1535','CS1532')
+SELECT * FROM session GROUP by date,begining HAVING invig_duty IS NULL
+
+insert into subject values('CS1401','4','EMIV')
+
+
+SELECT * from student INNER JOIN subject where student.semister=subject.subtype and subjectcode='CS1501'
+
+
+//to calculate no of students who will give the exam	
+SELECT COUNT(*) from student INNER JOIN subject where student.semister=subject.subtype and subjectcode='CS1501'   
+SELECT COUNT(*) from back INNER JOIN subject where back.subjectcode=subject.subjectcode and back.subjectcode='CS1501'
+
+
+
+select regno,session.coursecode,session.date,session.begining,session.ending,roomno from session INNER JOIN exam where exam.sno=session.sno  ORDER BY regno,date,begining//student tt
+
+select teacher.fno,teacher.fname,session.date,session.begining,session.ending ,session.roomno from teacher inner join session where teacher.fno=session.invig_duty ORDER by fno,date,begining//teacher tt
