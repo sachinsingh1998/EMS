@@ -1,3 +1,62 @@
+<html>
+<head>
+<title>
+Duty allocated
+</title>
+<style>
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th{
+    text-align: left;
+    padding: 10px;
+  border: 3px solid black;
+	}
+td{
+    text-align: left;
+    padding: 10px;
+  border: 1px solid black;
+	}
+.container{
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+</style>
+</head>
+<body background="bg.jpg">>
+
+<ul>
+  <li style="float:right"><a class="active" href="facultypage.php">Logout</a></li>
+</ul>
 	<?php
 	
 	 session_start();
@@ -14,7 +73,6 @@ $db = mysqli_connect("localhost","root","","ems");
 	 echo "updated are done";
 }
 $q=mysqli_query($db,"update swap set app='0' where dessno='$_SESSION['srcfno']'");
-	}
-session_destroy();?>
-<a href="faculty.php">HOME</a> 	
-?>
+	}?>
+</body>
+</html>
