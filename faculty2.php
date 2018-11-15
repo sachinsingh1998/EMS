@@ -52,17 +52,17 @@ li a:hover:not(.active) {
 }
 </style>
 </head>
-<body background="bg.jpg">>
+<body background="bg.jpg">
 
 <ul>
   <li style="float:right"><a class="active" href="facultypage.php">Logout</a></li>
+   <li style="float:right"><a  class="active" href="faculty.php">Home</a></li>
 </ul>
 	<?php
 	
 	 session_start();
 if(isset($_POST["accept"]))
 	{
-		
 $db = mysqli_connect("localhost","root","","ems");
 	for($i=0;$i<count($_POST['chk']);$i++)
 {
@@ -70,9 +70,9 @@ $db = mysqli_connect("localhost","root","","ems");
  $r=mysqli_query($db,"update swap set app='1' where srcsno='$row_no'");
  if($r)
  {
-	 echo "updated are done";
+	 echo "<h1>updated are done</h1> <br>";
 }
-$q=mysqli_query($db,"update swap set app='0' where dessno='$_SESSION['srcfno']'");
-	}?>
+//$q=mysqli_query($db,"update swap set app='0' where dessno='$_SESSION['srcfno']'");
+	}}?>
 </body>
 </html>

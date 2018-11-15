@@ -55,8 +55,9 @@ li a:hover:not(.active) {
 <body>
 
 <ul>
+ <li style="float:right"><a class="active" href="facultypage.php">Logout</a></li>
  <li style="float:right"><a  class="active" href="faculty.php">Home</a></li>
-  <li style="float:right"><a class="active" href="facultypage.php">Logout</a></li>
+ 
 </ul>
 <?php
 

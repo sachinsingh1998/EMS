@@ -156,5 +156,42 @@ $w="select srcdate as a,srcbegining as b,srcroomno as c,srcsno as d,desdate as e
 		<td><?php echo $row1['f']; ?></td>
 		</tr>
    <?php } }?>
+   </table>
+   
+   <?php //swapping request of this person which were accepted?>
+     <h2><center><u>Swapping Request which were Accepted</u></center></h2>
+      <form method="POST" action="faculty2.php">
+
+<?php 
+$ww=$_SESSION['srcfno'];
+$w="select srcdate as a,srcbegining as b,srcroomno as c,srcsno as d,desdate as e,desbegining as f,desroomno as g from swap where app=1 and srcfno='$ww'";//2 means still in waiting
+ $result3 = mysqli_query($db, $w);
+   $count = mysqli_num_rows($result3);
+   if($count==0)
+   {
+	   echo "<h2><center>notting was accepted</center> </h2>";
+   }
+   else{?>
+<table>
+	<thead>
+		<tr>
+   <th>date you reqested</th>
+	<th>Room Number </th>
+	<th>Begining</th>
+	<th>date given to other one</th>
+   <th>Room Number to other one</th>
+	<th>Begining to to other one</th>
+</tr>
+</thead>
+<?php while ($row1 = mysqli_fetch_array($result3)) { ?>
+			<tr>
+		<td><?php echo $row1['a']; ?></td>
+		<td><?php echo $row1['c']; ?></td>
+		<td><?php echo $row1['b']; ?></td>
+		<td><?php echo $row1['e']; ?></td>
+		<td><?php echo $row1['g']; ?></td>
+		<td><?php echo $row1['f']; ?></td>
+		</tr>
+   <?php } }?>
 </body>
 </html>
