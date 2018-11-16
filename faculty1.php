@@ -55,7 +55,7 @@ tr:nth-child(even) {background-color: #f2f2f2;}
 <?php while ($row = mysqli_fetch_array($result1)) { ?>
 
 		<tr>
-		<td><a href="faculty3.php?a=<?php echo $row['f'];?>&b=<?php echo $row['s'];?>&c=<?php echo $row_no?>&sql1=<?php echo $sql1;?>&sql2=<?php echo $sql2;?>&sql3=<?php echo $sql3;?>&sql4=<?php echo $row['a'];?>&sql5=<?php echo $row['b'];?>&sql6=<?php echo $row['z'];?>"</a><?php echo $row['t']; ?></td>
+		<td><a target="_blank" href="faculty3.php?a=<?php echo $row['f'];?>&b=<?php echo $row['s'];?>&c=<?php echo $row_no?>&sql1=<?php echo $sql1;?>&sql2=<?php echo $sql2;?>&sql3=<?php echo $sql3;?>&sql4=<?php echo $row['a'];?>&sql5=<?php echo $row['b'];?>&sql6=<?php echo $row['z'];?>"</a><?php echo $row['t']; ?></td>
 			<td><?php echo $row['a']; ?></td>
 			<td><?php echo $row['z']; ?></td>
 			<td><?php echo $row['b']; ?></td>
